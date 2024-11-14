@@ -25,11 +25,7 @@ function App() {
       <>
       <h1>Vite + React</h1>
           <div className="card">
-              {
-                  happy.forEach(video => {
-                      <p>{video}</p>
-                  })
-              }
+
       </div>
     </>
   )
