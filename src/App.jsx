@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import axios from 'axios'
+import Playlist from './playlist'
 
 function App() {
     const [happy, setHappy] = useState([])
@@ -21,14 +20,13 @@ function App() {
         }, []
     )
 
-  return (
-      <>
-      <h1>Vite + React</h1>
-          <div className="card">
-
-      </div>
+return (
+    <>
+    <h1>Welcome to MoodTube</h1>
+    <h2>What is your mood?</h2>
+        <Playlist happy={happy} sad={sad} excited={excited} />
     </>
-  )
+)
 }
 
-export default App
+export default App;
