@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import axios from 'axios'
 import Playlist from './playlist'
+import Home from './Home'
 
 function App() {
     const [happy, setHappy] = useState([])
@@ -10,6 +11,7 @@ function App() {
 
     useEffect(
         () => {
+            //should be dynamic with env file for keys
             axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet&q=happy&key=AIzaSyCa1WdmO_Lf9tdZIGhxVS1dabUKLVU-iy8')
                 .then(res => {
                     setHappy(res.data.items)
@@ -22,8 +24,7 @@ function App() {
 
 return (
     <>
-    <h1>Welcome to MoodTube</h1>
-    <h2>What is your mood?</h2>
+        <Home happy={happy} sad={sad} excited={excited} />
         <Playlist happy={happy} sad={sad} excited={excited} />
     </>
 )
